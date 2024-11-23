@@ -1,0 +1,36 @@
+<main id="main" data-aos="fade" data-aos-delay="300">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Gallery</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+        <div class="container-fluid">
+
+            <div class="row gy-4 justify-content-center">
+               
+                <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let data of galleries;let i=index">
+                    <div class="gallery-item h-100">
+                        <img src={{data.imageUrl}} class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href={{data.imageUrl}}
+                                class="glightbox preview-link" target="_blank"><i class="bi bi-arrows-angle-expand"></i></a>
+                            <h4>{{data.categoryName}}</h4>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+            </div>
+
+        </div>
+    </section><!-- End Gallery Section -->
+
+</main><!-- End #main -->

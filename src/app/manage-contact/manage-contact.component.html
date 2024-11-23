@@ -1,0 +1,48 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<main id="main" data-aos="fade" data-aos-delay="300">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Manage Contacts</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row justify-content-center mt-4 mb-5">
+
+                <div class="col-lg-9 mb-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of contacts;let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.email}}</td>
+                                <td>{{data.phone}}</td>
+                                <td>{{data.message}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- End Contact Form -->
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->

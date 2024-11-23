@@ -1,0 +1,60 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<main id="main" data-aos="fade" data-aos-delay="300">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Make Booking</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row justify-content-center mt-4 mb-5">
+
+                <div class="col-lg-9 mb-5">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Category Name</label>
+                                <input type="text" name="categoryName" #categoryName [(ngModel)]="form.categoryName"
+                                    class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Photoshoot Name</label>
+                                <input type="text" name="photoshootName" #photoshootName
+                                    [(ngModel)]="form.photoshootName" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Customer Name</label>
+                                <input type="text" name="customerName" #customerName [(ngModel)]="form.customerName"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Booking Date</label>
+                                <input type="date" name="bookingDate" #bookingDate [(ngModel)]="form.bookingDate"
+                                    minDate="0" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning my-3 mx-auto d-block" (click)="submit()"
+                            [disabled]="!form.categoryName || !form.photoshootName || !form.customerName || !form.bookingDate ">Submit</button>
+                    </form>
+                </div><!-- End Contact Form -->
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->

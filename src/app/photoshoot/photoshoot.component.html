@@ -1,0 +1,32 @@
+<main id="main" data-aos="fade" data-aos-delay="300">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>{{ serviceName }} Services</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="row gy-4">
+                <div class="col-xl-4 col-md-6 d-flex" *ngFor="let data of photoshoots;let i=index">
+                    <div class="service-item position-relative text-center">
+                        <img src={{data.imageUrl}} class="img-fluid"/>
+                        <h4><a [routerLink]="['/layout/make-booking',data.categoryName,data.title]" class="stretched-link">{{data.categoryName}}</a></h4>
+                        <h5><a [routerLink]="['/layout/make-booking',data.categoryName,data.title]" class="stretched-link">{{data.title}}</a></h5>
+                        <a [routerLink]="['/layout/make-booking',data.categoryName,data.title]" class="btn btn-warning" *ngIf="((userdata?.userType == 'Customer') && (isloggedIn))">Book Now</a>
+                    </div>
+                </div>
+                <!-- End Service Item -->
+            </div>
+        </div>
+    </section><!-- End Services Section -->
+
+</main><!-- End #main -->

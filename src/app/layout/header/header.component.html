@@ -1,0 +1,78 @@
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <a routerLink="/layout/home" class="logo d-flex align-items-center  me-auto me-lg-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <i class="bi bi-camera"></i>
+      <h1>PhotoFolio</h1>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li
+          *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))">
+          <a routerLink="/layout/home" class="text-white">Home</a>
+        </li>
+        <li
+          *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))">
+          <a routerLink="/layout/about" class="text-white">About</a>
+        </li>
+        <li *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"><a routerLink="/layout/dashboard"
+            class="text-white">Dashboard</a></li>
+        <li class="dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"><a class="text-white"><span
+              class="text-white">Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li><a routerLink="/layout/add-category" class="text-white">Add Category</a></li>
+            <li><a routerLink="/layout/manage-category" class="text-white">Manage Category</a></li>
+          </ul>
+        </li>
+        <li class="dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"><a class="text-white"><span
+              class="text-white">Photoshoot</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li><a routerLink="/layout/add-photoshoot" class="text-white">Add Photoshoot</a></li>
+            <li><a routerLink="/layout/manage-photoshoot" class="text-white">Manage Photoshoot</a></li>
+          </ul>
+        </li>
+        <li class="dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"><a class="text-white"><span
+              class="text-white">Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li><a routerLink="/layout/add-gallery" class="text-white">Add Gallery</a></li>
+            <li><a routerLink="/layout/manage-gallery" class="text-white">Manage Gallery</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/layout/list-customer" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"
+            class="text-white">Users</a></li>
+        <li><a routerLink="/layout/manage-booking" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"
+            class="text-white">Bookings</a></li>
+        <li><a routerLink="/layout/gallery"
+            *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))"
+            class="text-white">Gallery</a></li>
+        <li><a routerLink="/layout/services"
+            *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))"
+            class="text-white">Services</a></li>
+        <li><a routerLink="/layout/contact"
+            *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))"
+            class="text-white">Contact</a></li>
+        <li><a routerLink="/layout/manage-contact" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))"
+            class="text-white">Contact</a></li>
+        <li><a routerLink="/layout/user-booking-history" *ngIf="((userdata?.userType == 'Customer') && (isloggedIn))"
+            class="text-white">Bookings</a></li>
+        <li><a routerLink="/layout/user-profile" *ngIf="((isloggedIn))" class="text-white">Profile</a></li>
+        <li><a *ngIf="isloggedIn" class="text-white" (click)="logout()">Logout</a></li>
+        <li><a routerLink="/layout/login" *ngIf="!isloggedIn" class="text-white">Login</a></li>
+        <li><a routerLink="/layout/register" *ngIf="!isloggedIn" class="text-white">Register</a></li>
+      </ul>
+    </nav><!-- .navbar -->
+
+    <div class="header-social-links">
+      <a class="text-white" class="twitter"><i class="bi bi-twitter"></i></a>
+      <a class="text-white" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a class="text-white" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a class="text-white" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+  </div>
+</header>

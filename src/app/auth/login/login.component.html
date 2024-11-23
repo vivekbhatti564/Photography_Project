@@ -1,0 +1,47 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<main id="main" data-aos="fade" data-aos-delay="300">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Login</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row justify-content-center mt-4 mb-5">
+
+                <div class="col-lg-9 mb-5">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Email</label>
+                                <input type="email" name="email" #email [(ngModel)]="form.email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mx-auto">
+                                <label for="">Password</label>
+                                <input type="password" name="password" #password [(ngModel)]="form.password" class="form-control">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning my-3 mx-auto d-block"
+                            (click)="submit()">Login</button>
+                    </form>
+                    <button type="button" class="btn btn-outline-primary my-2 mx-auto d-block"
+                        (click)="googlesubmit()">Login With Google</button>
+
+                </div><!-- End Contact Form -->
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
